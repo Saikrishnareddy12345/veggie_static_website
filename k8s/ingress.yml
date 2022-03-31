@@ -7,7 +7,7 @@ spec:
  rules:
  - host: static1.saikrish.xyz
    http:
-    #  paths:
+     paths:
      - path:
        backend:
          serviceName: static-svc
