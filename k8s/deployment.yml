@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: static
-        image: docker tag static1:latest 913443211236.dkr.ecr.us-east-1.amazonaws.com/static1:$CHOICE
+        image: 913443211236.dkr.ecr.us-east-1.amazonaws.com/static:1
         ports:
         - containerPort: 80
