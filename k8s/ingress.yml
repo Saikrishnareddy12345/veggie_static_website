@@ -1,20 +1,14 @@
-apiVersion: networking.k8s.io/v1
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: static-ingress
-  namespace: static1
-  labels:
-    name: myingress
+ name: static-ingress
+ namespace: static
 spec:
-  rules:
-  - host: static1.saikrish.xyz
-    http:
-      paths:
-        backend:
-          service:
-            name: static-svc
-            port: 
-              number: 80
-
-
-
+ rules:
+ - host: static1.saikrish.xyz
+   http:
+    #  paths:
+     - path:
+       backend:
+         serviceName: static-svc
+         servicePort: 80
