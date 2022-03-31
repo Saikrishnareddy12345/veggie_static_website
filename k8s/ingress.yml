@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+ name: static-ingress
+ namespace: static1
+spec:
+ rules:
+ - host: static.pronb.xyz
+   http:
+     paths:
+     - path:
+       backend:
+         serviceName: static-svc
+         servicePort: 80

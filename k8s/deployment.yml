@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: static-deployment
+  namespace: static1
+spec:
+  selector:
+    matchLabels:
+      app: static-dept
+  replicas: 5 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: static-dept
+    spec:
+      containers:
+      - name: static
+        image: docker tag static1:latest 913443211236.dkr.ecr.us-east-1.amazonaws.com/static1:$BUILD_NUMBER
+        ports:
+        - containerPort: 80
