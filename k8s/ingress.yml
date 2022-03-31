@@ -5,7 +5,7 @@ metadata:
  namespace: static1
 spec:
  rules:
- - host: static.pronb.xyz
+ - host: static1.saikrish.xyz
    http:
      paths:
      - path:
