@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+ name: static-ingress
+ namespace: {{ .Values.namespace }}
+spec:
+ rules:
+ - host: 
+   http:
+     paths:
+     - path:
+       backend:
+         serviceName: {{ .Values.ingress.serviceName | quote }}
+         servicePort: {{ .Values.ingress.servicePort }}

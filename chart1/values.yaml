@@ -1,0 +1,34 @@
+
+
+replicaCount: 3
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+namespace: static1
+
+deployment:
+  name: static-dept
+  image: saikrish12345/static1:1
+  memory: "128Mi"
+  cpu: "500m"
+  containerPort: 80
+
+
+service:
+  type: NodePort
+  port: 80
+  name: static-dept
+  targetPort: 80
+
+
+ingress:
+  name: static-ingress
+  host: static1.saikrish.xyz
+  serviceName: static-svc
+  servicePort: 80
+  
+

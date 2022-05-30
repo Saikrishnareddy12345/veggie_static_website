@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: static-dept
+  namespace: {{ .Values.namespace }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "chart1.labels" . | nindent 4 }}
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+      labels:
+        {{- include "chart1.selectorLabels" . | nindent 4 }}
+    spec:
+      containers:
+      - name: {{ .Values.deployment.name }}
+        image: {{ .Values.deployment.image }}
+        resources:
+          limits:
+            memory: {{ .Values.deployment.memory }}
+            cpu: {{ .Values.deployment.cpu }}
+        ports:
+        - containerPort: {{ .Values.deployment.containerPort }}
+
+

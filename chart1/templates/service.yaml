@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: static-svc
+  namespace: {{ .Values.namespace }}
+  lables:
+    {{ include "chart1.selectorLabels" . | nindent 4 }}
+  name: {{ .Values.service.name | quote }}
+spec:
+  selector:
+    {{- include "chart1.selectorLabels" . | nindent 4 }}
+  type: {{ .Values.service.type | quote }}
+  ports:
+  - port: {{ .Values.service.port }}
+    targetPort: {{ .Values.service.targetPort }}  
