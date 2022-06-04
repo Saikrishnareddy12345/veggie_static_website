@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: static-dept
-        image: 913443211236.dkr.ecr.us-east-1.amazonaws.com/static1:1
+        image: saikrish12345/static1:1
         resources:
           limits:
             memory: "128Mi"
