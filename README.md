@@ -1,6 +1,8 @@
 Install cert-manager in Kubernetes Cluster.
-kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v1.0.1/cert-manager-legacy.yaml
 
+Cmd:-kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v1.0.1/cert-manager-legacy.yaml
+
+=============================================================================================================
 it will install cert manager packages on your k8s cluster
 
 
